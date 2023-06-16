@@ -2,7 +2,7 @@
 TP2 - main
 
 
-Copier le package dans votre repertoire catkin et ensuite pour compiler tapez la commande: 
+Copier le package "Urdf" dans votre repertoire catkin et ensuite pour compiler tapez la commande: 
 
 catkin build
 

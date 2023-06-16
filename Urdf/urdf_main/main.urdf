@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<robot name="index">
+
+	<material name="orange">
+		<color rgba="1 0.5 0 1"/>
+	</material>
+	<material name="gold">
+		<color rgba="1 0.7 0 1"/>
+	</material>
+	<material name="coral">
+		<color rgba="1 0.5 0.2 1"/>
+	</material>
+	
+	<material name="bananayellow" >
+	   	<color rgba="0.9803921568627451 0.996078431372549 0.29411764705882354 1.0" />
+	</material>
+
+	<material name="barbiepink" >
+	  	<color rgba="0.996078431372549 0.27450980392156865 0.6470588235294118 1.0" />
+	</material>
+
+	<material name="barfgreen" >
+	    	<color rgba="0.5803921568627451 0.6745098039215687 0.00784313725490196 1.0" />
+	</material>
+
+  	<link name="paume">
+    		<visual>
+      			<geometry>
+        			<box size="0.09 0.09 0.02"/>
+      			</geometry>
+			<material name="gold"/>
+    		</visual>
+ 	 </link>
+
+         <link name="phalange">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.03" radius="0.01"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+         <link name="phalange2">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.025" radius="0.0075"/>
+                        </geometry>
+			<material name="bananayellow"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+                 <link name="phalange3">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.02" radius="0.005"/>
+                        </geometry>
+			<material name="barbiepink"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <link name="sphere">
+		<visual>
+			<geometry>
+				<sphere radius="0.005"/>
+			</geometry>
+			<material name="barfgreen"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+		</visual>
+	</link>
+	<!--<joint name="paume_to_phalange" type="fixed">
+                <parent link="paume"/>
+                <child link="phalange"/>
+                <origin rpy="0 0 0" xyz="0.05 -0.03 0"/>
+        </joint>-->
+  	<joint name="paume_to_phalange" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="paume"/>
+    		<child link="phalange"/>
+		<origin rpy="0 0 0" xyz="0.050 -0.03 0"/>
+  	</joint>
+  	<joint name="phalange_to_phalange2" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="phalange"/>
+    		<child link="phalange2"/>
+		<origin rpy="0 0 0" xyz="0.027 0 0"/>
+  	</joint>
+  	<joint name="phalange2_to_phalange3" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="phalange2"/>
+    		<child link="phalange3"/>
+		<origin rpy="0 0 0" xyz="0.022 0 0"/>
+  	</joint>
+ 
+  	<joint name="phalange3_to_sphere" type="fixed">
+    		<parent link="phalange3"/>
+    		<child link="sphere"/>
+		<origin rpy="0 0 0" xyz="0.005 0 0"/>
+  	</joint>
+  	<link name="phalange4">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.03" radius="0.01"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <joint name="paume_to_phalange4" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="paume"/>
+    		<child link="phalange4"/>
+		<origin rpy="0 0 0" xyz="0.050 -0.0012 0"/>
+	</joint>
+	<link name="phalange5">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.03" radius="0.01"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <joint name="paume_to_phalange5" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="paume"/>
+    		<child link="phalange5"/>
+		<origin rpy="0 0 0" xyz="0.050 0.019 0"/>
+	</joint>
+	<link name="phalange6">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.03" radius="0.01"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <joint name="paume_to_phalange6" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="paume"/>
+    		<child link="phalange6"/>
+		<origin rpy="0 0 0" xyz="0.050 0.04 0"/>
+	</joint>
+	<link name="p">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.03" radius="0.01"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <joint name="paume_to_p" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="paume"/>
+    		<child link="p"/>
+		<origin rpy="0 0 0" xyz="-0.025 -0.04 -0.005"/>
+	</joint>
+	<link name="p42">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.025" radius="0.0075"/>
+                        </geometry>
+			<material name="bananayellow"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <link name="p43">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.02" radius="0.005"/>
+                        </geometry>
+			<material name="barbiepink"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+	<link name="s4">
+		<visual>
+			<geometry>
+				<sphere radius="0.005"/>
+			</geometry>
+			<material name="barfgreen"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+		</visual>
+	</link>
+	<joint name="4 to 42" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="phalange4"/>
+    		<child link="p42"/>
+		<origin rpy="0 0 0" xyz="0.027 0 0"/>
+	</joint>
+	<joint name="42 to 43" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="p42"/>
+    		<child link="p43"/>
+		<origin rpy="0 0 0" xyz="0.022 0 0"/>
+	</joint>
+	<joint name="43 to s4" type="fixed">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="p43"/>
+    		<child link="s4"/>
+		<origin rpy="0 0 0" xyz="0.005 0 0"/>
+	</joint>
+	<link name="p52">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.025" radius="0.0075"/>
+                        </geometry>
+			<material name="bananayellow"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <link name="p53">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.02" radius="0.005"/>
+                        </geometry>
+			<material name="barbiepink"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <link name="s5">
+		<visual>
+			<geometry>
+				<sphere radius="0.005"/>
+			</geometry>
+			<material name="barfgreen"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+		</visual>
+	</link>
+	<joint name="5 to 52" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="phalange5"/>
+    		<child link="p52"/>
+		<origin rpy="0 0 0" xyz="0.027 0 0"/>
+	</joint>
+	<joint name="52 to 53" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="p52"/>
+    		<child link="p53"/>
+		<origin rpy="0 0 0" xyz="0.022 0 0"/>
+	</joint>
+	<joint name="53 to s5" type="fixed">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="p53"/>
+    		<child link="s5"/>
+		<origin rpy="0 0 0" xyz="0.005 0 0"/>
+	</joint>
+	<link name="p62">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.025" radius="0.0075"/>
+                        </geometry>
+			<material name="bananayellow"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <link name="p63">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.02" radius="0.005"/>
+                        </geometry>
+			<material name="barbiepink"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <link name="s6">
+		<visual>
+			<geometry>
+				<sphere radius="0.005"/>
+			</geometry>
+			<material name="barfgreen"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+		</visual>
+	</link>
+	<joint name="6 to 62" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="phalange6"/>
+    		<child link="p62"/>
+		<origin rpy="0 0 0" xyz="0.027 0 0"/>
+	</joint>
+	<joint name="62 to 63" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="p62"/>
+    		<child link="p63"/>
+		<origin rpy="0 0 0" xyz="0.022 0 0"/>
+	</joint>
+	<joint name="63 to s6" type="fixed">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="p63"/>
+    		<child link="s6"/>
+		<origin rpy="0 0 0" xyz="0.005 0 0"/>
+	</joint>
+	<link name="p2">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.025" radius="0.0075"/>
+                        </geometry>
+			<material name="bananayellow"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <link name="p3">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.02" radius="0.005"/>
+                        </geometry>
+			<material name="barbiepink"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+                </visual>
+        </link>
+        <link name="sp">
+		<visual>
+			<geometry>
+				<sphere radius="0.005"/>
+			</geometry>
+			<material name="barfgreen"/>
+			<origin rpy="0 1.57 0" xyz="0.01 0.0 0"/>
+		</visual>
+	</link>
+	<joint name="p to p2" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="p"/>
+    		<child link="p2"/>
+		<origin rpy="0 0 0" xyz="0.027 0 0"/>
+	</joint>
+	<joint name="p2 to p3" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="p2"/>
+    		<child link="p3"/>
+		<origin rpy="0 0 0" xyz="0.022 0 0"/>
+	</joint>
+	<joint name="p3 to sp" type="fixed">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="p3"/>
+    		<child link="sp"/>
+		<origin rpy="0 0 0" xyz="0.005 0 0"/>
+	</joint>
+	
+</robot>

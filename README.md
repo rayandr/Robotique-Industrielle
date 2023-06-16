@@ -12,3 +12,6 @@ source path_to/catkin_ws/devel/setup.bash
 
 Pour visualizer: 
 Entrez dans le repertoire Urdf/urdf_main et tapez la commande roslaunch urdf_tutorial display.launch model:=main.urdf
+
+
+les doigts pouront etre controles en utilisant les slider bars.
